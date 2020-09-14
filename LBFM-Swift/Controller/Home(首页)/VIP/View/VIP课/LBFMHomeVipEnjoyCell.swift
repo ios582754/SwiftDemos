@@ -7,28 +7,26 @@
 //
 
 import UIKit
+import Then
 /// 添加cell点击代理方法
 protocol LBFMHomeVipEnjoyCellDelegate:NSObjectProtocol {
     func homeVipEnjoyCellItemClick(model:LBFMCategoryContents)
 }
 
-class LBFMHomeVipEnjoyCell: UITableViewCell {
+class LBFMHomeVipEnjoyCell: CustomTableCell {
     weak var delegate : LBFMHomeVipEnjoyCellDelegate?
     
     private var categoryContents:[LBFMCategoryContents]?
     
     private let LBFMVipEnjoyCellID = "LBFMVipEnjoyCell"
-    
-    private lazy var collectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout.init()
-        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.alwaysBounceVertical = true
-        collectionView.register(LBFMVipEnjoyCell.self, forCellWithReuseIdentifier: LBFMVipEnjoyCellID)
-        return collectionView
-    }()
+    let layout = UICollectionViewFlowLayout.init()
+    private lazy var collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout).then{
+        $0.delegate = self
+        $0.dataSource = self
+        $0.backgroundColor = UIColor.white
+        $0.alwaysBounceVertical = true
+        $0.register(LBFMVipEnjoyCell.self, forCellWithReuseIdentifier: LBFMVipEnjoyCellID)
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

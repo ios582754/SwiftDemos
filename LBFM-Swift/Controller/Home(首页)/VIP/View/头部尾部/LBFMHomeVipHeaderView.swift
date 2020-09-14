@@ -7,22 +7,20 @@
 //
 
 import UIKit
-
+import Then
 class LBFMHomeVipHeaderView: UITableViewHeaderFooterView {
     // 标题
-    private var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
-    }()
+    private var titleLabel = UILabel().then{
+        $0.font = UIFont.systemFont(ofSize: 20)
+    }
     
-    private var moreBtn:UIButton = {
-        let button = UIButton.init(type: UIButton.ButtonType.custom)
-        button.setTitle("更多 >", for: UIControl.State.normal)
-        button.setTitleColor(UIColor.gray, for: UIControl.State.normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        return button
-    }()
+    private var moreBtn = UIButton().then {
+//        let button = UIButton.init(type: UIButton.ButtonType.custom)
+        $0.setTitle("更多 >", for: UIControl.State.normal)
+        $0.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+       
+    }
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setUpLayout()

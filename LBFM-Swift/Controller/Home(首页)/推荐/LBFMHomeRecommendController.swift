@@ -257,14 +257,14 @@ extension LBFMHomeRecommendController:LBFMRecommendHeaderCellDelegate {
                 warning.configureTheme(.warning)
                 warning.configureDropShadow()
 
-                let iconText = ["🤔", "😳", "🙄", "😶"].sm_random()!
+                let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
                 warning.configureContent(title: "Warning", body: "暂时没有数据!!!", iconText: iconText)
                 warning.button?.isHidden = true
                 var warningConfig = SwiftMessages.defaultConfig
                 warningConfig.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
                 SwiftMessages.show(config: warningConfig, view: warning)
             }else{
-                let vc = LBFMClassifySubMenuController(categoryId:Int(categoryId)!)
+                let vc =  LBFMClassifySubMenuController(categoryId:Int(categoryId)!)
                 vc.title = title
                 self.navigationController?.pushViewController(vc, animated: true)
             }

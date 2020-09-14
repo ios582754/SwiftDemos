@@ -12,7 +12,7 @@ protocol LBFMHomeVipHotCellDelegate:NSObjectProtocol {
     func homeVipHotCellItemClick(model:LBFMCategoryContents)
 }
 
-class LBFMHomeVipHotCell: UITableViewCell {
+class LBFMHomeVipHotCell: CustomTableCell {
     weak var delegate : LBFMHomeVipHotCellDelegate?
     
     private var categoryContents:[LBFMCategoryContents]?

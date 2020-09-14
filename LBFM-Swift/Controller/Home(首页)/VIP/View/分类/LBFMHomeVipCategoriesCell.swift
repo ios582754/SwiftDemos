@@ -13,26 +13,56 @@ protocol LBFMHomeVipCategoriesCellDelegate:NSObjectProtocol {
     func homeVipCategoriesCellItemClick(id:String,url:String,title:String)
 }
 
-class LBFMHomeVipCategoriesCell: UITableViewCell {
+class LBFMHomeVipCategoriesCell: CustomTableCell {
     weak var delegate : LBFMHomeVipCategoriesCellDelegate?
     
     private var categoryBtnList:[LBFMCategoryBtnModel]?
     // MARK: - 懒加载九宫格分类按钮
-    private lazy var collectionView: UICollectionView = {
+//    -(JhPageItemView *)pageItemView2{
+//    if (!_pageItemView2) {
+//
+//        CGRect femwe =  CGRectMake(0, 350, Kwidth, 90*2+5*2+5*2);
+//        JhPageItemView *view =  [[JhPageItemView alloc]initWithFrame:femwe withmaxColumn:5 maxRow:2];
+//        view.backgroundColor = [UIColor redColor];
+//        view.kTopBottomMargin = 5;
+//        view.kLeftRightMargin = 10;
+//        view.itemHorizontalMargin = 5.f;
+//        view.itemVerticalMargin = 5.f;
+//        view.current_BGColor=[UIColor yellowColor];
+//        view.layoutStyle = JhCustomHorizontalArrangement;
+//
+//        view.PageControlStyle = JhPageControlStyelDotAndRectangle;//圆点 + 长条 样式
+//        view.PageControlContentMode = JhPageControlContentModeRight;
+//        view.PageControlMarginSpacing = 10;
+//        view.PageControlSpacing = 5;
+//
+//        view.delegate =self;
+//        self.pageItemView2 = view;
+//        [self.view addSubview: self.pageItemView2];
+//
+//    }
+//    return _pageItemView2;
+//}
+    private lazy var collectionView: JhPageItemView = {
         let layout = UICollectionViewFlowLayout.init()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.itemSize = CGSize(width:LBFMScreenWidth / 5, height:80)
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-        let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-        collectionView.contentSize = CGSize.init(width: LBFMScreenWidth, height: 80)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.white
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(LBFMVipCategoryCell.self, forCellWithReuseIdentifier:"LBFMVipCategoryCell")
+//        frame(forAlignmentRect:)
+        let collectionView = JhPageItemView(frame:CGRect(x: 0,y: 0,width: LBFMScreenWidth,height: 120) , withmaxColumn: 5, maxRow: 2)
+        collectionView.backgroundColor = UIColor.red
+        collectionView.kTopBottomMargin = 5
+        collectionView.kLeftRightMargin = 0;
+        collectionView.itemHorizontalMargin = 5;
+        collectionView.itemVerticalMargin = 5;
+        collectionView.current_BGColor = UIColor.yellow;
+        collectionView.layoutStyle = .customHorizontalArrangement;
+        collectionView.pageControlStyle = .styelDotAndRectangle;//圆点 + 长条 样式
+        collectionView.pageControlContentMode = .right ;
+           collectionView.pageControlMarginSpacing = 10;
+           collectionView.pageControlSpacing = 5;
         
         return collectionView
     }()
@@ -53,8 +83,19 @@ class LBFMHomeVipCategoriesCell: UITableViewCell {
     var categoryBtnModel : [LBFMCategoryBtnModel]? {
         didSet {
             guard let model = categoryBtnModel else {return}
-            self.categoryBtnList = model
-            self.collectionView.reloadData()
+            var arrs:[JhPageItemModel] = [];
+             self.categoryBtnList = model
+            self.categoryBtnList?.forEach({ (modelsss) in
+                let mods:JhPageItemModel = JhPageItemModel()
+                mods.text = modelsss.title!
+                mods.img = modelsss.coverPath!
+                arrs.append(mods)
+            })
+            arrs.removeLast()
+            arrs.removeLast()
+            arrs.removeLast()
+            arrs.removeLast()
+            self.collectionView.dataArray = arrs
         }
     }
 }

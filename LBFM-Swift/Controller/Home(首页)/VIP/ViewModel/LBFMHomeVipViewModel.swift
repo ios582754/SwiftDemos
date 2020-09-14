@@ -35,7 +35,7 @@ class LBFMHomeVipViewModel: NSObject {
         case LBFMHomeVipSectionBanner:
             return 150
         case LBFMHomeVipSectionGrid:
-            return 80
+            return  120
         case LBFMHomeVipSectionHot:
             return 190
         case LBFMHomeVipSectionEnjoy:

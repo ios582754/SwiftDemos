@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045A48622500CD0F0070BFBC /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A48612500CD0F0070BFBC /* CustomTableCell.swift */; };
+		045A486F2500E4A80070BFBC /* JhPageItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A48642500E4A70070BFBC /* JhPageItemCell.m */; };
+		045A48702500E4A80070BFBC /* JhPageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A48662500E4A70070BFBC /* JhPageItemView.m */; };
+		045A48712500E4A80070BFBC /* JhPageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045A48682500E4A70070BFBC /* JhPageItemCell.xib */; };
+		045A48722500E4A80070BFBC /* JhPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A48692500E4A70070BFBC /* JhPageControl.m */; };
+		045A48732500E4A80070BFBC /* JhCustomHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A486A2500E4A70070BFBC /* JhCustomHorizontalLayout.m */; };
+		045A48742500E4A80070BFBC /* JhPageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045A486D2500E4A70070BFBC /* JhPageItemModel.m */; };
 		3A14006A2202D61D00C98D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1400682202D61D00C98D59 /* Main.storyboard */; };
 		3A14006C2202D62000C98D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A14006B2202D62000C98D59 /* Assets.xcassets */; };
 		3A14006F2202D62000C98D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A14006D2202D62000C98D59 /* LaunchScreen.storyboard */; };
@@ -182,6 +189,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045A48612500CD0F0070BFBC /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		045A48642500E4A70070BFBC /* JhPageItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhPageItemCell.m; sourceTree = "<group>"; };
+		045A48652500E4A70070BFBC /* JhCustomHorizontalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhCustomHorizontalLayout.h; sourceTree = "<group>"; };
+		045A48662500E4A70070BFBC /* JhPageItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhPageItemView.m; sourceTree = "<group>"; };
+		045A48672500E4A70070BFBC /* JhPageItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhPageItemModel.h; sourceTree = "<group>"; };
+		045A48682500E4A70070BFBC /* JhPageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JhPageItemCell.xib; sourceTree = "<group>"; };
+		045A48692500E4A70070BFBC /* JhPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhPageControl.m; sourceTree = "<group>"; };
+		045A486A2500E4A70070BFBC /* JhCustomHorizontalLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhCustomHorizontalLayout.m; sourceTree = "<group>"; };
+		045A486B2500E4A70070BFBC /* JhPageItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhPageItemCell.h; sourceTree = "<group>"; };
+		045A486C2500E4A70070BFBC /* JhPageItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhPageItemView.h; sourceTree = "<group>"; };
+		045A486D2500E4A70070BFBC /* JhPageItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhPageItemModel.m; sourceTree = "<group>"; };
+		045A486E2500E4A70070BFBC /* JhPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhPageControl.h; sourceTree = "<group>"; };
+		045A48782500E56C0070BFBC /* LBFM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBFM-Bridging-Header.h"; sourceTree = "<group>"; };
 		2CFEE505BF3F94F8DFD531F9 /* Pods-LBFM-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBFM-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBFM-Swift/Pods-LBFM-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		3A1400612202D61D00C98D59 /* LBFM-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LBFM-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1400692202D61D00C98D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -372,6 +392,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045A48632500E4A70070BFBC /* JhPageItemView */ = {
+			isa = PBXGroup;
+			children = (
+				045A48642500E4A70070BFBC /* JhPageItemCell.m */,
+				045A48652500E4A70070BFBC /* JhCustomHorizontalLayout.h */,
+				045A48662500E4A70070BFBC /* JhPageItemView.m */,
+				045A48672500E4A70070BFBC /* JhPageItemModel.h */,
+				045A48682500E4A70070BFBC /* JhPageItemCell.xib */,
+				045A48692500E4A70070BFBC /* JhPageControl.m */,
+				045A486A2500E4A70070BFBC /* JhCustomHorizontalLayout.m */,
+				045A486B2500E4A70070BFBC /* JhPageItemCell.h */,
+				045A486C2500E4A70070BFBC /* JhPageItemView.h */,
+				045A486D2500E4A70070BFBC /* JhPageItemModel.m */,
+				045A486E2500E4A70070BFBC /* JhPageControl.h */,
+			);
+			path = JhPageItemView;
+			sourceTree = "<group>";
+		};
 		0B37B49673BB8D3EA5330BE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9533472203F5A500E4DC70 /* LBFMHeader.swift */,
+				045A48612500CD0F0070BFBC /* CustomTableCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -606,10 +645,12 @@
 		3A9533332203F11D00E4DC70 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				045A48632500E4A70070BFBC /* JhPageItemView */,
 				3AB53E08228653DC00302A5B /* WRNavigationBar */,
 				3A9CF5E122277F110093B36A /* CustomLabel */,
 				3A40DABF221FE74E00A4C734 /* ReplicatorLayer */,
 				3A26D5DC22169F3B0080A362 /* Refresh */,
+				045A48782500E56C0070BFBC /* LBFM-Bridging-Header.h */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1743,6 +1784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A14006F2202D62000C98D59 /* LaunchScreen.storyboard in Resources */,
+				045A48712500E4A80070BFBC /* JhPageItemCell.xib in Resources */,
 				3A9CF5CA222774AF0093B36A /* FindRecommend.json in Resources */,
 				3A40DAD6222000D500A4C734 /* listenMoreChannel.json in Resources */,
 				3A9CF5C9222774AF0093B36A /* FindDud.json in Resources */,
@@ -1826,6 +1868,7 @@
 				3AB649022228C15800733761 /* LBFMVipAnimationView.swift in Sources */,
 				3A9CF5C4222774090093B36A /* LBFMFindModel.swift in Sources */,
 				3ACA6E7F2223D1E100202E98 /* LBFMRecommendLiveCell.swift in Sources */,
+				045A48742500E4A80070BFBC /* JhPageItemModel.m in Sources */,
 				3ADC9B5522320D4500CAF62B /* LBFMClassifySubModuleType16Cell.swift in Sources */,
 				3ADC9B9D22324C7700CAF62B /* LBFMPlayDetailProgramCell.swift in Sources */,
 				3ADC97F82230ADF500CAF62B /* LBFMClassifySubCategoryCell.swift in Sources */,
@@ -1876,7 +1919,9 @@
 				3ACA6E5B2223B8EE00202E98 /* LBFMVipHotCell.swift in Sources */,
 				3A40DAAF221FDD4600A4C734 /* LBFMHotAudiobookCell.swift in Sources */,
 				3ACA6E7A2223CC8500202E98 /* LBFMHomeLiveHeaderView.swift in Sources */,
+				045A48622500CD0F0070BFBC /* CustomTableCell.swift in Sources */,
 				3ADC948D222CB2D300CAF62B /* LBFMClassifySubMenuAPI.swift in Sources */,
+				045A48732500E4A80070BFBC /* JhCustomHorizontalLayout.m in Sources */,
 				3A9533582204096900E4DC70 /* LBFMBouncesContentView.swift in Sources */,
 				3ADC9B7322321B9100CAF62B /* LBFMPlayAnchorCell.swift in Sources */,
 				3ACA6E7B2223CC8500202E98 /* LBFMLiveHeaderGridCell.swift in Sources */,
@@ -1892,6 +1937,7 @@
 				3A9CF5DC222779640093B36A /* LBFMFindDudCell.swift in Sources */,
 				3AB53E0F228653DC00302A5B /* WRNavigationBar.swift in Sources */,
 				3A40DAA9221FD4F300A4C734 /* LBFMGuessYouLikeCell.swift in Sources */,
+				045A48702500E4A80070BFBC /* JhPageItemView.m in Sources */,
 				3AB6490D2228C6AA00733761 /* LBFMMineModel.swift in Sources */,
 				3A9CF5E322277F110093B36A /* LBFMCustomLabel.swift in Sources */,
 				3A95337B2204207A00E4DC70 /* AppDelegate.swift in Sources */,
@@ -1945,12 +1991,14 @@
 				3ADC9B5722320D5600CAF62B /* LBFMClassifySubModuleType23Cell.swift in Sources */,
 				3AD3A9B7222C087000367138 /* LBFMClassifySubRecommendViewModel.swift in Sources */,
 				3A9CF5D6222776650093B36A /* LBFMFindCell.swift in Sources */,
+				045A48722500E4A80070BFBC /* JhPageControl.m in Sources */,
 				3A9CF5D0222775070093B36A /* LBFMFindRecommendController.swift in Sources */,
 				3ACA6E2A2223888C00202E98 /* LBFMListenRecommendCell.swift in Sources */,
 				3A40DACA221FFE8F00A4C734 /* LBFMListenRecommendController.swift in Sources */,
 				3AB649042228C17300733761 /* LBFMMineMakeCell.swift in Sources */,
 				3ADC9B6D22321AF000CAF62B /* LBFMPlayCell.swift in Sources */,
 				3A9CF5D8222777EA0093B36A /* LBFMFindAttentionCell.swift in Sources */,
+				045A486F2500E4A80070BFBC /* JhPageItemCell.m in Sources */,
 				3ADC9BA122324D1B00CAF62B /* LBFMPlayContentIntroCell.swift in Sources */,
 				3ADC9BA322324D3A00CAF62B /* LBFMPlayAnchorIntroCell.swift in Sources */,
 				3A26D5E62216BBAF0080A362 /* LBFMRecommendHeaderCell.swift in Sources */,
@@ -2122,6 +2170,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liubo.lbfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/Desktop/FDKJ/Demos/SwiftDemos/LBFM-Swift/Lib/LBFM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2147,6 +2196,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liubo.lbfm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mac/Desktop/FDKJ/Demos/SwiftDemos/LBFM-Swift/Lib/LBFM-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

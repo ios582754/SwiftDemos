@@ -63,7 +63,7 @@ extension LBFMHomeLiveBannerCell: FSPagerViewDelegate, FSPagerViewDataSource {
         warning.configureTheme(.warning)
         warning.configureDropShadow()
         
-        let iconText = ["🤔", "😳", "🙄", "😶"].sm_random()!
+        let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
         warning.configureContent(title: "Warning", body: "暂时没有点击功能", iconText: iconText)
         warning.button?.isHidden = true
         var warningConfig = SwiftMessages.defaultConfig

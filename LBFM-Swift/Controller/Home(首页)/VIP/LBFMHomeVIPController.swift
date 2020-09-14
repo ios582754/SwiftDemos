@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftMessages
-
+import Reusable
 let LBFMHomeVipSectionBanner    = 0   // 滚动图片section
 let LBFMHomeVipSectionGrid      = 1   // 分类section
 let LBFMHomeVipSectionHot       = 2   // 热section
@@ -42,6 +42,7 @@ class LBFMHomeVIPController: UIViewController {
     
     lazy var tableView : UITableView = {
         let tableView = UITableView.init(frame: CGRect(x:0, y:0, width: LBFMScreenWidth, height:LBFMScreenHeight - LBFMNavBarHeight - 44 - LBFMTabBarHeight), style: UITableView.Style.grouped)
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.white
@@ -50,11 +51,11 @@ class LBFMHomeVIPController: UIViewController {
         tableView.register(LBFMHomeVipHeaderView.self, forHeaderFooterViewReuseIdentifier: LBFMHomeVipHeaderViewID)
         tableView.register(LBFMHomeVipFooterView.self, forHeaderFooterViewReuseIdentifier: LBFMHomeVipFooterViewID)
         // 注册分区cell
-        tableView.register(LBFMHomeVIPCell.self, forCellReuseIdentifier: LBFMHomeVIPCellID)
-        tableView.register(LBFMHomeVipBannerCell.self, forCellReuseIdentifier: LBFMHomeVipBannerCellID)
-        tableView.register(LBFMHomeVipCategoriesCell.self, forCellReuseIdentifier: LBFMHomeVipCategoriesCellID)
-        tableView.register(LBFMHomeVipHotCell.self, forCellReuseIdentifier: LBFMHomeVipHotCellID)
-        tableView.register(LBFMHomeVipEnjoyCell.self, forCellReuseIdentifier: LBFMHomeVipEnjoyCellID)
+        tableView.register(cellType: LBFMHomeVIPCell.self)
+        tableView.register(cellType:LBFMHomeVipBannerCell.self)
+        tableView.register(cellType:LBFMHomeVipCategoriesCell.self)
+        tableView.register(cellType:LBFMHomeVipHotCell.self)
+        tableView.register(cellType:LBFMHomeVipEnjoyCell.self)
         tableView.uHead = URefreshHeader{ [weak self] in self?.setupLoadData() }
         return tableView
     }()
@@ -66,6 +67,15 @@ class LBFMHomeVIPController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(0)
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            } else {
+                make.bottom.equalTo(self.bottomLayoutGuide.snp.bottom)
+            }
+            
+        }
         //刚进页面进行刷新
         self.tableView.uHead.beginRefreshing()
         setupLoadData()
@@ -155,12 +165,13 @@ extension LBFMHomeVIPController:LBFMHomeVipBannerCellDelegate{
         warning.configureTheme(.warning)
         warning.configureDropShadow()
         
-        let iconText = ["🤔", "😳", "🙄", "😶"].sm_random()!
+        let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
         warning.configureContent(title: "Warning", body: "暂时没有点击功能", iconText: iconText)
+        warning.button?.isHidden = true
         warning.button?.isHidden = true
         var warningConfig = SwiftMessages.defaultConfig
         warningConfig.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
-        SwiftMessages.show(config: warningConfig, view: warning)
+//        SwiftMessages.show(config: warningConfig, view: warning)
     }
 }
 

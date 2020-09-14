@@ -13,7 +13,7 @@ protocol LBFMHomeVipBannerCellDelegate:NSObjectProtocol {
     func homeVipBannerCellClick(url:String)
 }
 
-class LBFMHomeVipBannerCell: UITableViewCell {
+class LBFMHomeVipBannerCell: CustomTableCell {
     weak var delegate : LBFMHomeVipBannerCellDelegate?
     
     var vipBanner: [LBFMFocusImagesData]?

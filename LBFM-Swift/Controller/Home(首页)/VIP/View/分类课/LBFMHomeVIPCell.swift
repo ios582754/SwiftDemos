@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-class LBFMHomeVIPCell: UITableViewCell {
+class LBFMHomeVIPCell: CustomTableCell {
 
     // 图片
     private var picView: UIImageView = {

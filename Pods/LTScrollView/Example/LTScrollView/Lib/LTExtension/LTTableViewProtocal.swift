@@ -14,14 +14,14 @@ public protocol LTTableViewProtocal { }
 public extension LTTableViewProtocal {
     
     private func configIdentifier(_ identifier: inout String) -> String {
-        var index = identifier.index(of: ".")
+        var index = identifier.firstIndex(of: ".")
         guard index != nil else { return identifier }
         index = identifier.index(index!, offsetBy: 1)
         identifier = String(identifier[index! ..< identifier.endIndex])
         return identifier
     }
     
-    public func registerCell(_ tableView: UITableView, _ cellCls: AnyClass) {
+    func registerCell(_ tableView: UITableView, _ cellCls: AnyClass) {
         var identifier = NSStringFromClass(cellCls)
         identifier = configIdentifier(&identifier)
         tableView.register(cellCls, forCellReuseIdentifier: identifier)

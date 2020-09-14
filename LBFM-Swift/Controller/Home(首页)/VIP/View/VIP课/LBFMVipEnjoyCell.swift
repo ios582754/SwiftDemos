@@ -7,39 +7,36 @@
 //
 
 import UIKit
-
+import Then
 class LBFMVipEnjoyCell: UICollectionViewCell {
     // 图片
-    private var imageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    private var imageView =  UIImageView().then {_ in
+       
+    }
     // 标题
-    private var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        return label
-    }()
+    private var titleLabel = UILabel().then  {
+        $0.font = UIFont.systemFont(ofSize: 16)
+        $0.numberOfLines = 0
+    }
     
     // 喜点
-    private var couponLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
-        return label
-    }()
-    
+    private var couponLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 13)
+    }
+//    let label = UILabel().then {
+//      $0.textAlignment = .center
+//      $0.textColor = .black
+//      $0.text = "Hello, World!"
+//    }
     // 会员免费
-    private var freeLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.backgroundColor = UIColor.init(red: 203/255.0, green: 148/255.0, blue: 95/255.0, alpha: 1)
-        label.text = "会员免费"
-        label.textColor = UIColor.white
-        label.layer.masksToBounds = true
-        label.layer.cornerRadius = 3
-        return label
-    }()
+    private var freeLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 12)
+        $0.backgroundColor = UIColor.init(red: 203/255.0, green: 148/255.0, blue: 95/255.0, alpha: 1)
+        $0.text = "会员免费"
+        $0.textColor = UIColor.white
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 3
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

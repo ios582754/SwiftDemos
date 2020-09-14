@@ -13,7 +13,7 @@ import SnapKit
 import SwiftyJSON
 import HandyJSON
 import SwiftMessages
-
+import Reusable
 
 let LBFMScreenWidth = UIScreen.main.bounds.size.width
 let LBFMScreenHeight = UIScreen.main.bounds.size.height

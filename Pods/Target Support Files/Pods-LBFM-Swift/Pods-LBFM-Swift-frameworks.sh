@@ -209,11 +209,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StreamingKit/StreamingKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
@@ -228,11 +230,13 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StreamingKit/StreamingKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
